@@ -1,0 +1,8 @@
+.container {
+	border:1px solid silver;
+	background-color: #fff;
+	border-radius: 4px;
+}
+input[type="text"] {
+	max-width: 260px;
+}
