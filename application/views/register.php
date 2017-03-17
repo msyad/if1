@@ -19,7 +19,7 @@
   <div class="register-box-body">
     <p class="login-box-msg">Register a new membership</p>
 
-    <form action="<?=$action?>" id="form1">
+    <form action="<?=$action?>" id="form1" method="POST">
       <div class="form-group has-feedback">
         <input type="text" name="nama" id="nama" class="form-control" placeholder="Full name">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -46,7 +46,7 @@
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="button" id="reg" class="btn btn-primary btn-block btn-flat">Register</button>
+          <button type="button" id="reg" class="btn btn-primary btn-block btn-flat" onclick="cek()">Register</button>
         </div>
         <!-- /.col -->
       </div>
@@ -80,19 +80,39 @@
       radioClass: 'iradio_square-blue',
       increaseArea: '20%' // optional
     });
+  });
 
-    $("#reg").click(function(){
+  function cek(){
+    var pw = $("#password").val();
+    var pw1 = $("#pwd").val();
+    var nama = $("#nama").val();
+    var usr = $("#username").val();
+    if(pw == "" || pw1 == "" || nama == "" || usr == ""){
+      alert("Lengkapi form.");
+    }else{
+      register();
+    }
+  }
+
+  function register(){
+
       if($("#setuju").is(":checked")){
         var pw = $("#password").val();
         var pw1 = $("#pwd").val();
+        var nama = $("#nama").val();
+        var usr = $("#username").val();
         if(pw == pw1){
           $.ajax({
-            url:"<?=base_url()?>register/daftar",
-            data: $("#form1").serialize(),
+            url:"<?=base_url()?>register/cek_data",
+            data: {nama:nama, usr:usr},
             dataType: "JSON",
-            type:"POST",
+            type:"GET",
             success:function(res){
-              window.location="<?=base_url()?>";
+              if(res==0){
+                $("#form1").submit();
+              }else{
+                alert("Nama atau username sudah dipakai."); 
+              }
             }
           });
         }else{
@@ -102,9 +122,7 @@
       }else{
         alert("Mohon Check Agreement");
       }
-    });
-
-  });
+    }
 </script>
 </body>
 </html>

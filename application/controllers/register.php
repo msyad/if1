@@ -12,9 +12,9 @@
 	    function index() {
 	        $data = array(
 	        	'title' 	=> 'IF1 BP12 UPI YPTK | Welcome',
-	        	'action'	=> $this->template->base_url("/daftar"),
+	        	'action'	=> $this->template->base_url("daftar"),
 	        );
-	        $this->template->jquery(array('validation'));
+	        // $this->template->jquery(array('validation'));
 	        $this->load->view('register',$data);
 	    }
 
@@ -33,10 +33,18 @@
 	    		'status'	=> $status,
 	    	);
 	    	$this->db->insert('IF1_USER', $data);
-	    	echo json_encode($data);
+	    	redirect('login');
 	    }
+
+	    function cek_data(){
+	    	$nama = $this->input->get('nama');
+	    	$usr = $this->input->get('usr');
+	    	$sql = $this->db->query("SELECT ID FROM IF1_USER WHERE nama ='".$nama."' AND usr='".$usr."'");
+	    	if($sql->num_rows() == 0){
+	    		echo json_encode(0);
+	    	}else{
+	    		echo json_encode($sql->row());
+	    	}
+	    }
+
 	}
-	        
-
-
-?>
