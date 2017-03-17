@@ -101,7 +101,7 @@ $db['remote'] = array(
 	'username' => 'sql12164191',
 	'password' => 'LanD7hcr1c',
 	'database' => 'sql12164191',
-	'dbdriver' => 'mysql',
+	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => TRUE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
