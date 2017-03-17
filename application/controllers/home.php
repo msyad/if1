@@ -15,6 +15,12 @@ class Home extends CI_Controller {
 		$this->template->display('main',$data);
 	}
 
+	public function logout(){
+		$this->session->unset_userdata("logged_in");
+		$this->session->sess_destroy();
+		redirect('login');
+	}
+
 }
 
 /* End of file home.php */

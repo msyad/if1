@@ -46,7 +46,7 @@
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="button" type="submit" id="reg" class="btn btn-primary btn-block btn-flat">Register</button>
+          <button type="button" id="reg" class="btn btn-primary btn-block btn-flat" onclick="register()">Register</button>
         </div>
         <!-- /.col -->
       </div>

@@ -1,3 +1,9 @@
+<?php 
+        $session = $this->session->userdata('logged_in');
+        if($session['id'] == null){
+          redirect('login');
+        }
+?>
 <!DOCTYPE html>
 <html>
 <head>

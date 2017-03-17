@@ -7,7 +7,7 @@
 		private $_css			= '';		
 		private $_javascript	= '';
 		private $_controller	= '';
-		private $_submodul			= '';
+		private $_submodul		= '';
 		private $_base_link		= '';
 		private $_jquery = array (
 	
@@ -31,6 +31,8 @@
 			$this->_base_link	= site_url($submodul);
 			
 			$this->_submodul	= ucwords(str_replace('_', ' ', $submodul));
+
+
 		}
 
 		function display($template,$data=null){
