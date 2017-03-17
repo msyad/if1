@@ -46,7 +46,7 @@
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="button" id="reg" class="btn btn-primary btn-block btn-flat" onclick="cek()">Register</button>
+          <button type="button" type="submit" id="reg" class="btn btn-primary btn-block btn-flat">Register</button>
         </div>
         <!-- /.col -->
       </div>
@@ -72,17 +72,19 @@
 <script src="<?=base_url()?>assets/bootstrap/js/bootstrap.min.js"></script>
 <!-- iCheck -->
 <script src="<?=base_url()?>assets/plugins/iCheck/icheck.min.js"></script>
+<script src="<?=base_url()?>assets/plugins/validate/jquery.validation.js"></script>
 <script type="text/javascript">
-  $().ready(function () {
-    // $("#form1").validate();
+
+  $(document).ready(function () {
     $('input').iCheck({
       checkboxClass: 'icheckbox_square-blue',
       radioClass: 'iradio_square-blue',
       increaseArea: '20%' // optional
     });
+    $("#form1").validate();
   });
 
-  function cek(){
+  /*function cek(){
     var pw = $("#password").val();
     var pw1 = $("#pwd").val();
     var nama = $("#nama").val();
@@ -93,7 +95,7 @@
       register();
     }
   }
-
+*/
   function register(){
 
       if($("#setuju").is(":checked")){
