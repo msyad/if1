@@ -72,9 +72,19 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.3 -->
-<script src="<?=base_url()?>/assets/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="<?=base_url()?>assets/plugins/jQuery/jquery-2.2.3.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $(".postBox").keyup(function() {
+     $(".cntTxt").text($(".postBox").val().length);     
+    });
+  });
+  
+</script>
+
 <!-- jQuery UI 1.11.4 -->
-<script src="<?=base_url()?>/assets/plugins/jQueryUI/jquery-ui.min.js"></script>
+<script src="<?=base_url()?>assets/plugins/jQueryUI/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button);
@@ -108,5 +118,6 @@
 <script src="<?=base_url()?>dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?=base_url()?>dist/js/demo.js"></script>
+
 </body>
 </html>

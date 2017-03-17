@@ -1,15 +1,4 @@
 <div class="content-wrapper">
-  <!-- Content Header (Page header) -->
-  <section class="content-header">
-    <h1>
-      User Profile
-    </h1>
-    <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li><a href="#">Examples</a></li>
-      <li class="active">User profile</li>
-    </ol>
-  </section>
 
   <!-- Main content -->
   <section class="content">
@@ -28,17 +17,9 @@
 
             <ul class="list-group list-group-unbordered">
               <li class="list-group-item">
-                <b>Followers</b> <a class="pull-right">1,322</a>
-              </li>
-              <li class="list-group-item">
-                <b>Following</b> <a class="pull-right">543</a>
-              </li>
-              <li class="list-group-item">
-                <b>Friends</b> <a class="pull-right">13,287</a>
-              </li>
+                <b>Post</b> <a class="pull-right">1,322</a>
+              </li>              
             </ul>
-
-            <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
           </div>
           <!-- /.box-body -->
         </div>
@@ -95,7 +76,31 @@
           </ul>
           <div class="tab-content">
             <div class="active tab-pane" id="activity">
+
+              <!-- Posting -->
+
+              <div class="post">
+                <form class="form-horizontal">
+                  <div class="form-group">                  
+                    <div class="col-sm-12">
+                      <textarea placeholder="Tulis sesuatu..." style="resize: vertical;" class="form-control postBox" rows="4"></textarea>
+                    </div>
+                  </div>  
+                  <div class="form-group">    
+                    <div class="col-sm-6" style="color:#A4A4A4;">
+                      <span class="cntTxt">0</span> Character
+                    </div>              
+                    <div class="col-sm-6">
+                      <button class="btn btn-primary btn-sm pull-right">POST</button>  
+                    </div>
+                  </div>  
+                </form>    
+              </div>
+
+
+              <!-- Posting -->
               <!-- Post -->
+
               <div class="post">
                 <div class="user-block">
                   <img class="img-circle img-bordered-sm" src="dist/img/user1-128x128.jpg" alt="user image">
@@ -364,10 +369,11 @@
                 </div>
                 <!-- /.nav-tabs-custom -->
               </div>
+
               <!-- /.col -->
             </div>
             <!-- /.row -->
 
           </section>
           <!-- /.content -->
-        </div>
+</div>        
