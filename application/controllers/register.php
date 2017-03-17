@@ -19,9 +19,9 @@
 	    }
 
 	    function daftar(){
-	    	$nama = $this->input->post('nama');
-	    	$usr = $this->input->post('username');
-	    	$pwd = $this->input->post('password');
+	    	$nama = clean($this->input->post('nama'));
+	    	$usr = clean($this->input->post('username'));
+	    	$pwd = clean($this->input->post('password'));
 	    	$tgl_reg = date('Y-m-d');
 	    	$status = 1;
 	    	$level = 1;
@@ -39,8 +39,8 @@
 	    }
 
 	    function cek_data(){
-	    	$nama = $this->input->get('nama');
-	    	$usr = $this->input->get('usr');
+	    	$nama = clean($this->input->get('nama'));
+	    	$usr = clean($this->input->get('usr'));
 	    	$sql = $this->db->query("SELECT ID FROM IF1_USER WHERE nama ='".$nama."' AND usr='".$usr."'");
 	    	if($sql->num_rows() == 0){
 	    		echo json_encode(0);

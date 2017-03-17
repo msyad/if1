@@ -19,8 +19,8 @@ class Login extends CI_Controller {
 	}
 
 	public function masuk(){
-		$usr = $this->input->post("username");
-		$pwd = $this->input->post("password");
+		$usr = clean($this->input->post("username"));
+		$pwd = clean($this->input->post("password"));
 
 		$cek = $this->db->query("SELECT * FROM IF1_USER WHERE usr = '".$usr."' AND pwd = '".md5($pwd)."'");
 		$res = $cek->num_rows();
