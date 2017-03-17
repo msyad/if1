@@ -9,11 +9,10 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$data = array (
-			'title'		=> "IF1 BP12 UPI YPTK | Welcome"
 		);
 
 		//$this->load->view('home', $data,'',TRUE);
-		$this->template->display('home',$data);
+		$this->template->display('main',$data);
 	}
 
 }
