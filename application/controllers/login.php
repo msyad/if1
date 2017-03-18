@@ -12,7 +12,7 @@ class Login extends CI_Controller {
 	{
 		$data = array (
 			'title'		=> "IF1 BP12 UPI YPTK | Welcome",
-			'action'	=> $this->template->base_url("masuk"),
+			'action'	=> base_url()."login/masuk",
 		);
 		$this->template->jquery(array('validation'));
 		$this->load->view('login',$data);
@@ -35,12 +35,13 @@ class Login extends CI_Controller {
 			);
 			$this->session->set_userdata("logged_in", $session);
 			$session = $this->session->userdata('logged_in');
-			redirect('home');
 
 			$data_log = array(
 				'last_login'	=> date('Y-m-d H:i:s')
 			);
-			$this->db->update('IF1_USER', $data_log, "WHERE ID = '".$session['id']."'");
+			$this->db->update('IF1_USER', $data_log, "id = '".$session['id']."'");
+
+			redirect('home');
 		}else{
 			echo "<script>alert('Login Failed.');</script>";
 			redirect('login');
